@@ -8,8 +8,9 @@ export function choose(answers) {
     "C++": 0,
     Java: 0,
   };
+  console.log(answers);
   if (answers.reasonOfLearning === "Interest") {
-    if (answers.expirience === "Yes") {
+    if (answers.experience === "Yes") {
       if (answers.field === "Frontend") {
         results.Javascript += 1;
       } else if (answers.field === "Backend") {
@@ -27,6 +28,7 @@ export function choose(answers) {
       } else if (answers.field === "Mobile") {
         results.Kotlin += 0.4;
         results.Swift += 0.4;
+        console.log("mobile");
         if (answers.apple.includes("Phone")) {
           results.Swift += 0.5;
         } else {
@@ -52,7 +54,7 @@ export function choose(answers) {
           results.Java += 0.5;
         }
       }
-    } else if (answers.expirience === "No") {
+    } else if (answers.experience === "No") {
       results.Python += 0.2;
       results.Javascript += 0.2;
       results["C++"] += 0.1;
@@ -62,6 +64,7 @@ export function choose(answers) {
         if (answers.field === "Frontend" || answers.field === "Backend") {
           results.Javascript += 0.6;
         } else if (answers.field === "Mobile") {
+          console.log("mobile");
           results.Kotlin += 0.4;
           results.Swift += 0.4;
           if (answers.apple.includes("Phone")) {
